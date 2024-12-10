@@ -3,48 +3,116 @@
 <head>
     <title>Rover Control</title>
     <style>
-        .gamepad {display: flex;justify-content: space-between;align-items: center;width: 740px;height: 250px;background: #252525;border-radius: 20px;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);padding: 20px;}
-        .joystick-container {width: 250px;height: 250px;background: #333;border-radius: 50%;position: relative;overflow: hidden;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);}
-        .joystick {width: 90px;height: 90px;background: #666;border-radius: 50%;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);touch-action: none;}
-        .form_button{border:none;background:none;color:white;font-size:inherit;}
-        .button{background-color:#444;position:absolute;width:50px;height:50px;border-radius:50%;border:none;transition: all 0.2s;font-size:18px;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);color:white;}
-        .flx{display:flex;justify-content:center;align-items:center;}
+        .gamepad {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 740px;
+            height: 250px;
+            background: #252525;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        .joystick-container {
+            width: 250px;
+            height: 250px;
+            background: #333;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .joystick {
+            width: 90px;
+            height: 90px;
+            background: #666;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            touch-action: none;
+        }
+        .form_button {
+            border: none;
+            background: none;
+            color: white;
+            font-size: inherit;
+        }
+        .button {
+            background-color: #444;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            transition: all 0.2s;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+        .flx {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
-
-<body class="flx" style="font-family: Arial, sans-serif; background-color: black; color: white; height: 100vh;margin: 0;flex-direction:column;">
+<body class="flx"
+    style="font-family: Arial, sans-serif; background-color: black; color: white; height: 100vh;margin: 0;flex-direction:column;">
     <h2>Kushagra Srivastava</h2>
     <div class="gamepad">
         <div class="joystick-container">
             <div class="joystick" id="joystick"></div>
         </div>
-        <div class="flx" style="position: relative;width: 250px; height: 250px;border-radius: 50%;background-color: #333;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+        <div class="flx"
+            style="position: relative;width: 250px; height: 250px;border-radius: 50%;background-color: #333;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
             <button class="button flx" style="top: 10px; left: 50%; transform: translateX(-50%);">
-                <form action="./spinleft" ><input type="submit" value="SA" class="form_button"></form>    
+                <form action="./spinleft">
+                    <input type="submit" value="SA" class="form_button">
+                </form>
             </button>
             <button class="button flx" style="bottom: 10px; left: 50%; transform: translateX(-50%);">
-                <form action="./spinright" ><input type="submit" value="SC" class="form_button"></form>
+                <form action="./spinright">
+                    <input type="submit" value="SC" class="form_button">
+                </form>
             </button>
             <button class="button flx" style="left: 10px; top: 50%; transform: translateY(-50%); ">
-                <form action="./tinyleft" ><input type="submit" value="TL" class="form_button"></form>
+                <form action="./tinyleft">
+                    <input type="submit" value="TL" class="form_button">
+                </form>
             </button>
             <button class="button flx" style="right: 10px; top: 50%; transform: translateY(-50%); ">
-                <form action="./tinyright"><input type="submit" value="TR" class="form_button"></form>
+                <form action="./tinyright">
+                    <input type="submit" value="TR" class="form_button">
+                </form>
             </button>
             <button class="button flx" style="height:70px; width:70px; background:red;">
-                <form action="./stop"><input type="submit" value="STOP" class="form_button"></form>
+                <form action="./stop">
+                    <input type="submit" value="STOP" class="form_button">
+                </form>
             </button>
             <button class="button flx" style="bottom: 39px; left: 25%; transform: translateX(-50%);">
-                <form action="./bld" ><input type="submit" value="BLD" class="form_button"></form>
+                <form action="./bld">
+                    <input type="submit" value="BLD" class="form_button">
+                </form>
             </button>
             <button class="button flx" style="left: 39px; top: 25%; transform: translateY(-50%); ">
-                <form action="./fld" ><input type="submit" value="FLD" class="form_button"></form>
+                <form action="./fld">
+                    <input type="submit" value="FLD" class="form_button">
+                </form>
             </button>
             <button class="button flx" style="right: 39px; top: 25%; transform: translateY(-50%); ">
-                <form action="./frd"><input type="submit" value="FRD" class="form_button"></form>
+                <form action="./frd">
+                    <input type="submit" value="FRD" class="form_button">
+                </form>
             </button>
             <button class="button flx" style="right: 39px; top: 75%; transform: translateY(-50%);">
-                <form action="./brd"><input type="submit" value="BRD" class="form_button"></form>
+                <form action="./brd">
+                    <input type="submit" value="BRD" class="form_button">
+                </form>
             </button>
         </div>
     </div>
@@ -79,7 +147,7 @@
             const dy = clientY - centerY;
             const maxDistance = containerRadius - joystickRadius;
             const distance = Math.min(Math.sqrt(dx * dx + dy * dy), maxDistance);
-            const angle = Math.atan2(dy, dx)*(180 / Math.PI);
+            const angle = Math.atan2(dy, dx) * (180 / Math.PI);
             const newX = Math.cos(angle * (Math.PI / 180)) * distance + centerX;
             const newY = Math.sin(angle * (Math.PI / 180)) * distance + centerY;
             joystick.style.left = `${newX}px`;
@@ -93,14 +161,14 @@
         }
         function sendCommand(angle) {
             let action;
-            if (angle > -45 && angle <= 45) { 
-                action = 'right'; 
+            if (angle > -45 && angle <= 45) {
+                action = 'right';
             } else if (angle > 45 && angle <= 135) {
                 action = 'backward';
             } else if (angle > 135 && angle <= 225) {
                 action = 'left';
             } else {
-                action = 'forward'; 
+                action = 'forward';
             }
             fetch(`/${action}?`)
                 .then(response => console.log(`Action sent: ${action}`))
@@ -108,4 +176,5 @@
         }
     </script>
 </body>
+
 </html>
