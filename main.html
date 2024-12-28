@@ -165,14 +165,12 @@
                 action = 'right';
             } else if (angle > 45 && angle <= 135) {
                 action = 'backward';
-            } else if (angle > 135 && angle <= 225) {
-                action = 'left';
-            } else {
+            } else if (angle < -45 && angle >= -135) {
                 action = 'forward';
+            } else {
+                action = 'left';
             }
             fetch(`/${action}?`)
-                .then(response => console.log(`Action sent: ${action}`))
-                .catch(err => console.error('Error sending action:', err));
         }
     </script>
 </body>
